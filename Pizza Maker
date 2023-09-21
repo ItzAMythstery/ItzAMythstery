@@ -1,0 +1,72 @@
+crusts = ["Stuffed Crust", "Thin Crust", "Medium Crust"]
+toppings = ["Pepperoni", "Sausage", "Pineapple", "Ham", "Bacon", "Mushrooms", "Olives", "Bell Pepper", "Signature Mix"]
+cheese = ["y", "yes", "yeh", "yeah", "yah", "ya", "yep", "yup"]
+nocheese = ["n", "no", "nah", "nope",]
+none = "none"
+
+responses = []
+            
+print("Hello and welcome to Pizza Emporium pizza customizer.")
+cheesy = input("\nTo begin, do you want cheese on your pizza? ")
+cheesy = cheesy.lower()
+
+if cheesy in nocheese:
+    print("Alright, cheese removed.")
+    responses.append("No Cheese")  
+else:
+    print("Cheese added. (Default)")
+    responses.append("Cheese")
+    
+print( )
+saucey = input("Would you like sauce in your pizza? ")
+saucey = saucey.lower()
+
+if saucey in nocheese:
+    print("Alright, sauce removed.")
+    responses.append("No Sauce")  
+else:
+    print("Sauce added. (Default)")
+    responses.append("Sauce")
+
+print( )
+print(toppings)
+topping = input("What topping would you like? ")
+topping = topping.lower()
+topping = topping.title()
+
+if topping in toppings:
+    print("Added: ", topping)   
+    responses.append(topping)
+    
+elif topping not in toppings:
+    print("No Toppings added (Default)")
+    topping = "none"
+    responses.append(topping)
+    
+print( )
+print(crusts)
+crust = input("And Lastly, what kind of crust would you like? " )
+crust = crust.lower()
+crust = crust.title()
+
+if crust in crusts:
+    print("Added: ", crust)   
+    crust = crust
+    responses.append(crust)
+    
+elif crust not in crusts:
+    print("Medium Crust added (Default)")
+    crust = "Medium Crust"
+    responses.append(crust)
+    
+    
+print("\nJust for confirmation, we would like your: ")
+name = input("Name: ")
+name = name.title()
+address = input("Delivery Address: ")
+address = address.title()
+number = input("And Phone number (Optional) ")
+
+print("Your Order is: ", responses)
+print("\nOrder for " + str(name) + ", going to address: " + str(address))
+print("Thank you and have a good day.")
